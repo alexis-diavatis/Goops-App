@@ -2,30 +2,31 @@ angular.module('ilgApp')
 
 .controller('AppConfigCtrl', ['$scope', 'configService',
     function ($scope, configService) {
-        
-         var shellThemesDest = ilg_json.getHomePath() + '/.themes',
-                gtkThemesDest = ilg_json.getHomePath() + '/.local/share/themes',
-                iconThemesDest = ilg_json.getHomePath() + '/.local/share/icons';
+
+        var shellThemesDest = ilg_json.getHomePath() + '/.themes',
+            gtkThemesDest = ilg_json.getHomePath() + '/.local/share/themes',
+            iconThemesDest = ilg_json.getHomePath() + '/.local/share/icons';
 
 
         $scope.appPath = configService.appPath();
 
+        
         $scope.getFolder = function (folder) {
             switch (folder) {
             case "shell":
-                openFolder(shellThemesDest);    
+                openFolder(shellThemesDest);
                 break;
 
             case "gtk":
-                openFolder(gtkThemesDest);    
+                openFolder(gtkThemesDest);
                 break;
 
             case "icons":
-                openFolder(iconThemesDest);    
+                openFolder(iconThemesDest);
                 break;
             case "app":
-                openFolder(configService.appPath());    
-                break;        
+                openFolder(configService.appPath());
+                break;
             }
         }
 
