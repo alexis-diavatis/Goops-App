@@ -1,0 +1,162 @@
+@color-grey: #555555;
+@color-grey-dark: #202020;
+
+body {
+    background-color: @color-grey-dark;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857;    
+    width:1200px;
+    height:830px;
+}
+.table-borderless td,
+.table-borderless th {
+    border: 0px!important;
+}
+
+footer {
+	background:@color-grey-dark;
+	height:141px;
+	border-top:1px solid #555;
+	color:#ccc;
+}
+#footer-system {
+	background:#555;
+	height:141px;
+
+}
+#footer-system .list-group-item {
+	padding:0 0 0 20px;
+}
+
+.navbar {
+
+	background:#ededed;
+
+}
+
+#tmpl-view {
+  height:610px;
+  overflow-y:scroll;
+  color:#ccc;
+}
+
+.theme-thumb {
+  width:220px;
+  height:122px;
+}
+
+.close-app {
+	margin-top:5px;
+	position:relative;
+	left:10px;
+}
+* {
+	-webkit-user-select: none;
+	cursor:default!important;
+}
+
+#main {
+	padding-top:20px;
+}
+
+.tmpl-search {
+	background: @color-grey-dark;
+	border:none;
+	border-bottom:#555 1px solid;
+}
+
+.btn {
+	overlay:hidden;
+}
+/** Sroll bars **/
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    /*-webkit-box-shadow: inset 0 0 6px #555;*/
+    background: none;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background: @color-grey;
+}
+
+/** override boostrap**/
+
+.list-group-item {
+	background: @color-grey;
+
+}
+
+a.list-group-item  {
+	color: #ccc;	
+}
+
+a
+{
+    text-decoration: none!important;
+}
+
+.list-group-item {
+	border:none;
+}
+
+#sidebar {
+	height:650px;
+	background:@color-grey;
+	padding-right:0px;
+
+}
+
+.navbar {
+	min-height: 40px;
+}
+.modal {
+    bottom: 0;
+    display: none;
+    left: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1040;
+    
+}
+
+.modal-dialog {
+	margin-top:15%;
+	right:10%;
+}
+
+.modal-content {
+	background:#555;
+}
+
+.modal-header {
+    background:@color-grey-dark;
+}
+.modal-body {
+    background: @color-grey;
+}
+.modal-footer {
+    background: @color-grey-dark;
+}
+
+.modal-backdrop, .modal-backdrop.fade.in {
+    opacity: 0;
+}
+.modal-footer {
+	border-top:none;
+}
+.modal-header {
+	border-bottom:none;
+}
+.input-xs {
+    height:22px;
+}
+

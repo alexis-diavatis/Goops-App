@@ -7,19 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    
+
 
     <title>Girlfriend -prototype</title>
-    
+
     <link href="./vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="./vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    
     <link href="./vendors/bootstrap/css/offcanvas.css" rel="stylesheet">
+    <link href="./assets/stylesheets/extra.css" rel="stylesheet">
+    <link href="./assets/stylesheets/styles.less" rel="stylesheet/less">
 
-    <link href="./assets/css/extra.css" rel="stylesheet">
-    <link href="./assets/css/override_bootstrap.css" rel="stylesheet">
-    <link href="./assets/css/styles.css" rel="stylesheet">
-    
     <script>
         var fs = require('fs');
           var util = require('util');
@@ -27,6 +24,7 @@
           var win = gui.Window.get();
           var path = require('path');
           var fse = require('fs-extra');
+          var less = require('less');
           //var io = require ('socket.io');
     
           var Ilg_json = require ('./helpers/helpers.js');
@@ -37,6 +35,7 @@
           onload = function() {
             gui.Window.get().show();
           }
+
     </script>
 
 
@@ -100,8 +99,10 @@
 
     <script src="./vendors/jquery.js"></script>
     <script src="./vendors/angular.js"></script>
+    <!-- Add a midleware -->
+    <script src="./vendors/less.js"></script>
     <script src="./vendors/socket.io.min.js"></script>
-    <script src="./vendors/bootstrap/js/bootstrap.min.js"></script> 
+    <script src="./vendors/bootstrap/js/bootstrap.min.js"></script>
     <script src="./vendors/bootstrap/js/offcanvas.js"></script>
 
     <script src="./assets/js/app.js"></script>

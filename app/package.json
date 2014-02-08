@@ -2,7 +2,7 @@
   "main": "index.html",
   "name": "girlfriend-app",
   "description": "app for install themes",
-  "version": "0.0.0.1",  
+  "version": "0.0.1",  
   "window": {
     "title": "Gf",    
     "toolbar": false,
