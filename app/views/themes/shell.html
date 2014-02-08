@@ -1,0 +1,133 @@
+<div ng-controller="ShellThemesListCtrl">
+    <div id="tmpl-view">
+
+        <div class="themes">
+
+            <div style="display:inline-block" class="col-lg-3" ng-repeat="shellTheme in shellThemes | filter:search">
+
+
+                <div style="padding:10px 0;">
+                    <div>
+                        <a href="#" data-target="#myModal{{$index+1}}" data-toggle="modal">
+                            <img class="theme-thumb" ng-src="{{themeThumb+shellTheme.id}}.png">
+                        </a>
+
+                    </div>
+                    <div style="padding:5px; 10px 5px; 10px;">
+                        {{shellTheme.name}}
+                        <span class="pull-right">
+
+                            <a ng-href='#' class="" ng-click='setTheme(shellTheme.id);'>
+                                <span class="glyphicon glyphicon-play"></span>
+                            </a>
+
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Modal -->
+                <div class="modal" id="myModal{{$index+1}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog ">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i style="color:#fff;" class="fa fa-times"></i></button>
+                                <h4 class="modal-title" id="myModalLabel">{{shellTheme.name}}</h4>
+                            </div>
+                            <div class="modal-body">
+                                <table class="table table-borderless table-in-modal">
+                                    <tr>
+                                        <td width="180">
+                                            <span class="label label-info">Author</span>
+                                        </td>
+                                        <td>
+                                            {{shellTheme.author.name}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="label label-info">Last Updated</span>
+                                        </td>
+                                        <td>
+                                            {{shellTheme.update}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="label label-info">Color variant</span>
+                                        </td>
+                                        <td>
+                                            {{shellTheme.colorVariance}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="label label-info">Theme Home Page</span>
+                                        </td>
+                                        <td>
+                                            <a href="" ng-click="launchDefaultBrowser(gtkTheme.url)">{{shellTheme.url}}</a>
+                                        </td>
+                                        <tr>
+                                            <td>
+                                                <span class="label label-info">License</span>
+                                            </td>
+                                            <td>
+                                                {{shellTheme.license}}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="label label-info">Description</span>
+                                            </td>
+                                            <td>
+                                                {{shellTheme.description}}
+                                            </td>
+                                        </tr>
+                                </table>
+
+                            </div>
+
+
+                            <div class="modal-footer">
+                                <button type="button" ng-href='#' class="btn btn-primary" ng-click='setTheme(shellTheme.id);'>
+                                    <span class="glyphicon glyphicon-play"></span>
+                                </button>
+
+                            </div>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+                <!-- /.modal -->
+
+            </div>
+            <div style="position:absolute; bottom:0px; left:20px;">
+                <div class="input-group">
+                    <div class="btn-group">
+                        <button type="button" ng-href='#' class="btn btn-primary btn-sm" ng-click='openTweakTool();'>
+                            <span class="glyphicon glyphicon-cog"></span>
+                        </button>
+
+                        <button type="button" ng-href='#' class="btn btn-primary btn-sm" ng-click='setTheme("Default");'>
+                            Adwaita
+                        </button>
+                        <input class="form-control input-sm" style="width:300px;" ng-model="search.name">
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+    <!-- #tmpl-view -->
+
+</div>
+
+
+
+
+
+
+

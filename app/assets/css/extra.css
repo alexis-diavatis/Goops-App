@@ -1,0 +1,93 @@
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
+/** ADWAITA BUTTON **/
+.btn-default-adwaita {
+background: linear-gradient(to bottom, #ededed 1%,#ccc 90%);
+
+  border-color: #c1c1c1;
+}
+.btn-default-adwaita:hover,
+.btn-default-adwaita:focus,
+.btn-default-adwaita:active,
+.btn-default-adwaita.active,
+.open .dropdown-toggle.btn-default-adwaita {
+background: linear-gradient(to bottom, #ccc 1%,#ededed 90%);
+
+  border-color: #c1c1c1;
+}
+.btn-default-adwaita:active,
+.btn-default-adwaita.active,
+.open .dropdown-toggle.btn-default-adwaita {
+  background-image: none;
+}
+.btn-default-adwaita.disabled,
+.btn-default-adwaita[disabled],
+fieldset[disabled] .btn-default-adwaita,
+.btn-default-adwaita.disabled:hover,
+.btn-default-adwaita[disabled]:hover,
+fieldset[disabled] .btn-default-adwaita:hover,
+.btn-default-adwaita.disabled:focus,
+.btn-default-adwaita[disabled]:focus,
+fieldset[disabled] .btn-default-adwaita:focus,
+.btn-default-adwaita.disabled:active,
+.btn-default-adwaita[disabled]:active,
+fieldset[disabled] .btn-default-adwaita:active,
+.btn-default-adwaita.disabled.active,
+.btn-default-adwaita[disabled].active,
+fieldset[disabled] .btn-default-adwaita.active {
+  background-color: #d9534f;
+  border-color: #222;
+}
+.btn-default-adwaita .badge {
+  color: #d9534f;
+  background-color: #fff;
+}
+
+/** Unstyled BUTTON **/
+.btn-default-unstyled {
+  background:none;
+  border:none;
+  color:#ccc;
+  text-shadow:none;
+}
+.btn-default-unstyled:hover,
+.btn-default-unstyled:focus,
+.btn-default-unstyled:active,
+.btn-default-unstyled.active,
+.open .dropdown-toggle.btn-default-unstyled {
+  background:none;
+  border:none;
+  color:#ccc;
+  outline:none;
+}
+.btn-default-unstyled:active,
+.btn-default-unstyled.active,
+.open .dropdown-toggle.btn-default-unstyled {
+  background-image: none;
+  outline:none;
+}
+.btn-default-unstyled.disabled,
+.btn-default-unstyled[disabled],
+fieldset[disabled] .btn-default-unstyled,
+.btn-default-unstyled.disabled:hover,
+.btn-default-unstyled[disabled]:hover,
+fieldset[disabled] .btn-default-unstyled:hover,
+.btn-default-unstyled.disabled:focus,
+.btn-default-unstyled[disabled]:focus,
+fieldset[disabled] .btn-default-unstyled:focus,
+.btn-default-unstyled.disabled:active,
+.btn-default-unstyled[disabled]:active,
+fieldset[disabled] .btn-default-unstyled:active,
+.btn-default-unstyled.disabled.active,
+.btn-default-unstyled[disabled].active,
+fieldset[disabled] .btn-default-unstyled.active {
+  background:none;
+  border:none;
+}
+.btn-default-unstyled .badge {
+  background:none;
+  border:none;
+}

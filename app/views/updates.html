@@ -1,0 +1,88 @@
+<style>
+    .list-group-item {
+    background:none;        
+        }
+    hr {
+    border:none;
+    height:1px; 
+        background:#555;
+    }
+</style>
+
+<div ng-controller="AppConfigCtrl">
+    <div id="tmpl-view">
+        <div class="col-lg-12">
+
+            <div class="row">
+                <div class="col-lg-2">
+                    <span style="color:#555; font-weight:bold;">Settings</span>
+                </div>
+
+
+                <div class="col-lg-10">
+                    <span style="color:#555; font-size:1.2em;">Application Path</span>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <i class="fa fa-terminal"></i>&nbsp;&nbsp;{{appPath}}
+                        </li>
+                        <li class="list-group-item">Set $ILG_CLIENT_PATH variable to the application installation path
+                            <br />For example in ~/.bashrc: export ILG_CLIENT_PATH=$HOME/Girlfriend/</li>
+                    </ul>
+                    <hr/>
+                    <span style="color:#555; font-size:1.2em;">Syncing</span>
+                    <ul class="list-group">
+                        <li class="list-group-item">Currently you cannot sync data from online. You must sync the application
+                            <span class="label label-info">Sync Themes</span> every time you get an update.
+                        </li>
+                        <li class="list-group-item">
+                            <div class="btn-group">
+                                <button class="btn btn-primary btn-sm" ng-click="ilgAppSyncData();">
+                                    <i class="fa fa-spinner fa-spin"></i>&nbsp;Sync Themes</button>
+                                <button class="btn btn-success btn-sm" disabled>
+                                    <i class="fa fa-cloud-download"></i>&nbsp;Update Themes / Client</button>
+                            </div>
+
+                        </li>
+                    </ul>
+                    <hr/>
+                    <span style="color:#555; font-size:1.2em;">Theme Folders</span>
+                    <ul class="list-group">
+                        <li class="list-group-item">Quickly view and edit the files that Girlfriend is installing.
+                        </li>
+                        <li class="list-group-item">
+                            <i class="fa fa-folder-open"></i>&nbsp;
+                            <a href="" ng-click="getFolder('shell');">Shell & Gtk2 themes</a>&nbsp;&nbsp;
+                            <i class="fa fa-folder-open"></i>&nbsp;
+                            <a href="" ng-click="getFolder('gtk');">Gtk3 themes</a>&nbsp;&nbsp;
+                            <i class="fa fa-folder-open"></i>&nbsp;
+                            <a href="" ng-click="getFolder('icons');">Icon sets</a>&nbsp;&nbsp;
+                            <i class="fa fa-folder-open"></i>&nbsp;
+                            <a href="" ng-click="getFolder('app');">Girlfriend App</a>
+
+                        </li>
+                    </ul>
+                    <hr/>
+                    <span style="color:#555; font-size:1.2em;">Delete</span>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            Deleting all installed files. Not working yet.
+                        </li>
+                        <li class="list-group-item">
+                            <button disabled class="btn btn-danger btn-sm" ng-click="">
+                                <i class="fa fa-times"></i>&nbsp;Delete Themes</button>
+                        </li>
+                    </ul>
+
+                </div>
+                <!-- col-lg-10 -->
+
+            </div>
+            <!-- row -->
+
+
+
+
+        </div>
+    </div>
+
+</div>
