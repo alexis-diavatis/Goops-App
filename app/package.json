@@ -1,15 +1,19 @@
 {
   "main": "index.html",
-  "name": "ilg-client-proto",
+  "name": "girlfriend-app",
   "description": "app for install themes",
-  "version": "0.1.0",  
+  "version": "0.0.0.1",  
   "window": {
-    "title": "ILG Light",    
+    "title": "Gf",    
     "toolbar": false,
     "frame": true,
     "width": 1200,
     "height": 830,
     "resizable": false,
     "show":false   
+  },
+  "dependencies": {
+   "fs-extra": "*",
+    "socket.io": "*"
   }
 }
