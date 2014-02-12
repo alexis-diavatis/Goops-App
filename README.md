@@ -1,4 +1,4 @@
-Girlfriend-App
+Goops-App
 ==============
 
 A Theme Application For GNOME
