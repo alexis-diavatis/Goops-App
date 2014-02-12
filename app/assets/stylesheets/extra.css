@@ -3,48 +3,7 @@
     margin: 0 auto;
 }
 
-/** ADWAITA BUTTON **/
-.btn-default-adwaita {
-background: linear-gradient(to bottom, #ededed 1%,#ccc 90%);
 
-  border-color: #c1c1c1;
-}
-.btn-default-adwaita:hover,
-.btn-default-adwaita:focus,
-.btn-default-adwaita:active,
-.btn-default-adwaita.active,
-.open .dropdown-toggle.btn-default-adwaita {
-background: linear-gradient(to bottom, #ccc 1%,#ededed 90%);
-
-  border-color: #c1c1c1;
-}
-.btn-default-adwaita:active,
-.btn-default-adwaita.active,
-.open .dropdown-toggle.btn-default-adwaita {
-  background-image: none;
-}
-.btn-default-adwaita.disabled,
-.btn-default-adwaita[disabled],
-fieldset[disabled] .btn-default-adwaita,
-.btn-default-adwaita.disabled:hover,
-.btn-default-adwaita[disabled]:hover,
-fieldset[disabled] .btn-default-adwaita:hover,
-.btn-default-adwaita.disabled:focus,
-.btn-default-adwaita[disabled]:focus,
-fieldset[disabled] .btn-default-adwaita:focus,
-.btn-default-adwaita.disabled:active,
-.btn-default-adwaita[disabled]:active,
-fieldset[disabled] .btn-default-adwaita:active,
-.btn-default-adwaita.disabled.active,
-.btn-default-adwaita[disabled].active,
-fieldset[disabled] .btn-default-adwaita.active {
-  background-color: #d9534f;
-  border-color: #222;
-}
-.btn-default-adwaita .badge {
-  color: #d9534f;
-  background-color: #fff;
-}
 
 /** Unstyled BUTTON **/
 .btn-default-unstyled {
