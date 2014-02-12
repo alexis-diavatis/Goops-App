@@ -1,4 +1,4 @@
-var ilgApp = angular.module('ilgApp', [])
+var ilgApp = angular.module('ilgApp', ["ngAnimate"])
 
 .factory('configService', function () {
     return {

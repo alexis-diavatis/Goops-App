@@ -1,6 +1,6 @@
 {
   "main": "index.html",
-  "name": "Goops",
+  "name": "goops",
   "description": "app for install themes",
   "version": "0.0.1",
   "chromium-args" : "--ignore-certificate-errors",    

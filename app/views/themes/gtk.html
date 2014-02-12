@@ -3,8 +3,8 @@
 
 
         <div class="themes">
-            <div style="display:inline-block" class="col-lg-3" ng-repeat="gtkTheme in gtkThemes | filter:search">
-
+            <div style="display:inline-block" class="col-lg-3" data-ng-repeat="gtkTheme in gtkThemes | filter:search track by gtkTheme.id">
+               
 
                 <div style="padding:10px 0;">
                     <div>
@@ -13,7 +13,7 @@
                         </a>
 
                     </div>
-                    <div style="padding:5px; 10px 5px; 10px;">
+                    <div style="padding:5px; 10px 5px; 10px;" >
                         {{gtkTheme.name}}
                         <span class="pull-right">
 
@@ -99,7 +99,7 @@
                     <!-- /.modal-dialog -->
                 </div>
                 <!-- /.modal -->
-
+        
             </div>
 
             <div style="position:absolute; bottom:0px; left:20px;">
