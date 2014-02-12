@@ -13,7 +13,7 @@ angular.module('ilgApp')
                         });
             },
             function (callback) {
-                        callback(null, 'Just a second call back')
+                        callback(null, 'Just a second callback')
             }
             ], function (err, result) {
                     if (err) return console.error(err);                    
@@ -23,8 +23,7 @@ angular.module('ilgApp')
             }
 
     getData(function (data, result) { 
-        $scope.$apply(function () {
-            
+        $scope.$apply(function () {            
             $scope.version = result;
         });
     });

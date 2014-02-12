@@ -1,11 +1,11 @@
 {
   "main": "index.html",
-  "name": "girlfriend-app",
+  "name": "Goops",
   "description": "app for install themes",
   "version": "0.0.1",
   "chromium-args" : "--ignore-certificate-errors",    
   "window": {
-    "title": "Gf",
+    "title": "Goops",
     "icon": "/home/alex/Girlfriend/Girlfriend-App/logo.png",     
     "toolbar": false,
     "frame": true,
