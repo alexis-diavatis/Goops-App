@@ -2,9 +2,11 @@
   "main": "index.html",
   "name": "girlfriend-app",
   "description": "app for install themes",
-  "version": "0.0.1",  
+  "version": "0.0.1",
+  "chromium-args" : "--ignore-certificate-errors",    
   "window": {
-    "title": "Gf",    
+    "title": "Gf",
+    "icon": "/home/alex/Girlfriend/Girlfriend-App/logo.png",     
     "toolbar": false,
     "frame": true,
     "width": 1200,
@@ -14,6 +16,8 @@
   },
   "dependencies": {
    "fs-extra": "*",
-    "socket.io": "*"
+    "socket.io": "*",
+    "async": "*"  
+      
   }
 }

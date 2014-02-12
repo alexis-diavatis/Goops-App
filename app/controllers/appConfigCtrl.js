@@ -10,7 +10,7 @@ angular.module('ilgApp')
 
         $scope.appPath = configService.appPath();
 
-        
+
         $scope.getFolder = function (folder) {
             switch (folder) {
             case "shell":
@@ -45,7 +45,8 @@ angular.module('ilgApp')
             });
 
         }
-
+       
+        
 
         /** Sync and create folders **/
 

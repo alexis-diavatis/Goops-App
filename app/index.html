@@ -21,12 +21,15 @@
         var fs = require('fs');
           var util = require('util');
           var gui = require('nw.gui');
+          var async = require('async');
           var win = gui.Window.get();
           var path = require('path');
           var fse = require('fs-extra');
           var less = require('less');
           //var io = require ('socket.io');
-    
+          var clientio = require('socket.io-client');
+          var socket = clientio.connect('http://localhost' , { port: '2000' }); 
+          
           var Ilg_json = require ('./helpers/helpers.js');
           var ilg_json = new Ilg_json();
     
@@ -101,7 +104,7 @@
     <script src="./vendors/angular.js"></script>
     <!-- Add a midleware -->
     <script src="./vendors/less.js"></script>
-    <script src="./vendors/socket.io.min.js"></script>
+    <!--<script src="./vendors/socket.io.min.js"></script>-->
     <script src="./vendors/bootstrap/js/bootstrap.min.js"></script>
     <script src="./vendors/bootstrap/js/offcanvas.js"></script>
 
@@ -113,6 +116,7 @@
     <script src="./controllers/helpCtrl.js"></script>
     <script src="./controllers/iconsCtrl.js"></script>
     <script src="./controllers/appConfigCtrl.js"></script>
+    <script src="./controllers/startCtrl.js"></script>
 
 
 
