@@ -48,7 +48,6 @@ angular.module('ilgApp')
         }
 
 
-
         /** Sync and create folders **/
         //** This need to be hardly optimized! **//
         $scope.ilgAppSyncData = function () {
