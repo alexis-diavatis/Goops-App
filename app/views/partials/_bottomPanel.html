@@ -1,14 +1,33 @@
+<script>
+$(function(){    
+    
+    $('.locked').popover({ 
+        trigger: "hover",
+        placement: "top",
+        title: "Locked",
+        content: "This is locked"
+    });
+   
+});
+</script>
+
 <div ng-controller="consoleCtrl">
 <div class="col-lg-10" style="padding:0px;">
     <footer>
-        <div id="console">
+        <div id="console" style="font-size:11px;">
             <table class="table table-conseded table-borderless">
                 <tr>
                 <td>
                 <strong>Latest |</strong> Client: <span class="label label-default">{{version.0.app}}</span>
-                Bundle: <span class="label label-default">{{version.0.bundle}}</span>    
-                </td>
-                </tr>            
+                Bundle: <span class="label label-default" tooltip="saa">{{version.0.bundle}}</span>    
+                </td>                    
+                </tr>
+                <tr>
+                <td>
+                <strong class="locked" data-toggle="popover">Locked |</strong> <span class="label label-danger">Yes</span>
+               
+                </td>                    
+                </tr>
             </table>
 
         </div>
