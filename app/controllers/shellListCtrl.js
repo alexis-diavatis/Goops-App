@@ -23,12 +23,12 @@ angular.module('ilgApp')
                 child;
             cmd = "gsettings set org.gnome.shell.extensions.user-theme name " + themename;
             child = exec(cmd, function (error, stdout, stderr) {
-                //console.log('stdout: ' + stdout);
-                //console.log('stderr: ' + stderr);
                 if (error !== null) {
                     console.log('exec error: ' + error);
                 }
             });
         }
+        
+       
 
 }]);

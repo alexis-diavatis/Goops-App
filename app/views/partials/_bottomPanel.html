@@ -1,20 +1,7 @@
-<script>
-$(function(){    
-    
-    $('.locked').popover({ 
-        trigger: "hover",
-        placement: "top",
-        title: "Locked",
-        content: "This is locked"
-    });
-   
-});
-</script>
-
 <div ng-controller="consoleCtrl">
 <div class="col-lg-10" style="padding:0px;">
     <footer>
-        <div id="console" style="font-size:11px;">
+        <div id="console" style="font-size:12px;">
             <table class="table table-conseded table-borderless">
                 <tr>
                 <td>
@@ -24,7 +11,7 @@ $(function(){
                 </tr>
                 <tr>
                 <td>
-                <strong class="locked" data-toggle="popover">Locked |</strong> <span class="label label-danger">Yes</span>
+                <strong data-toggle="popover">Locked |</strong> <span class="label label-danger">Yes</span>
                
                 </td>                    
                 </tr>
@@ -36,7 +23,7 @@ $(function(){
 <div id="footer-system" class="col-lg-2" style="padding:0px;">
     <div class="list-group">
 
-        <span style="font-size:10px;">
+        <span style="font-size:12px;">
             <span class="list-group-item"><span class="label label-primary">Goops {{appPackage.version}}</span></span>
         </span>
     </div>
