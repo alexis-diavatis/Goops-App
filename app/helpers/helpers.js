@@ -1,5 +1,5 @@
 
-const APP_PATH = process.env.ILG_CLIENT_PATH;
+const APP_PATH = process.env.GOOPS_PATH;
 
 module.exports =  function Ilg_json() {
 
