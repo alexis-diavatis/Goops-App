@@ -17,6 +17,16 @@ var ilgApp = angular.module('ilgApp', ["ngAnimate"])
                 }
             });
         },
+        
+        getAppPackage : function () {
+            var package = fs.readFileSync('package.json', 'utf-8', function (err, data) {
+  			if (err) throw err;
+  				console.log(data);
+		});
+
+      	return JSON.parse(package);
+    
+        },
 
         launchDefaultBrowser: function (link) {
             var exec = require('child_process').exec,
