@@ -1,14 +1,13 @@
 angular.module('ilgApp')
 
-.controller('AppConfigCtrl', ['$scope', 'configService',
-    function ($scope, configService) {
+.controller('AppConfigCtrl', ['$scope', 'configService', 'MsgService',
+    function ($scope, configService, MsgService) {
 
         var shellThemesDest = ilg_json.getHomePath() + '/.themes',
             gtkThemesDest = ilg_json.getHomePath() + '/.local/share/themes',
             iconThemesDest = ilg_json.getHomePath() + '/.local/share/icons';
         var exec = require('child_process').exec,
             child;
-
 
         $scope.appPath = configService.appPath();
 
@@ -78,7 +77,7 @@ angular.module('ilgApp')
                     var shellThemesSrc = ilg_json.getDataPath() + 'shell/*';
                     cmd = "cp -r " + shellThemesSrc + " " + shellThemesDest;
 
-                    child = exec(cmd, function (error, stdout, stderr) {                      
+                    child = exec(cmd, function (error, stdout, stderr) {
                         console.log('stderr: ' + stderr);
                         if (error !== null) {
                             console.log('exec error: ' + error);
@@ -93,7 +92,7 @@ angular.module('ilgApp')
 
                     var gtkThemesSrc = ilg_json.getDataPath() + 'gtk/*';
                     cmd = "cp -r " + gtkThemesSrc + " " + gtkThemesDest;
-                    child = exec(cmd, function (error, stdout, stderr) {                        
+                    child = exec(cmd, function (error, stdout, stderr) {
                         console.log('stderr: ' + stderr);
                         if (error !== null) {
                             console.log('exec error: ' + error);
@@ -104,7 +103,7 @@ angular.module('ilgApp')
 
 
                     cmd = "cp -r " + gtkThemesSrc + " " + shellThemesDest;
-                    child = exec(cmd, function (error, stdout, stderr) {                        
+                    child = exec(cmd, function (error, stdout, stderr) {
                         console.log('stderr: ' + stderr);
                         if (error !== null) {
                             console.log('exec error: ' + error);
@@ -120,7 +119,7 @@ angular.module('ilgApp')
                     var iconsThemesSrc = ilg_json.getDataPath() + 'icons/*';
 
                     cmd = "cp -r " + iconsThemesSrc + " " + iconsThemesDest;
-                    child = exec(cmd, function (error, stdout, stderr) {                        
+                    child = exec(cmd, function (error, stdout, stderr) {
                         console.log('stderr: ' + stderr);
                         if (error !== null) {
                             console.log('exec error: ' + error);

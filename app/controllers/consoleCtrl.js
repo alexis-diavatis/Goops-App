@@ -1,8 +1,8 @@
 angular.module('ilgApp')
 
-.controller('consoleCtrl', ['$scope', 'configService',
-    function ($scope, configService) {
-        
-       
-        
+.controller('consoleCtrl', ['$scope', 'configService', 'MsgService',
+    function ($scope, configService, MsgService) {
+    
+        $scope.testValue = MsgService.testValue;
+      
     }]);
