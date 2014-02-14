@@ -128,6 +128,17 @@ angular.module('ilgApp')
                     });
 
                     callback(null, 'copy icons themes');
+                },
+                function (callback) {
+                    cmd = "notify-send 'Goops finished syncing succesfully!'";
+                    child = exec(cmd, function (error, stdout, stderr) {
+                        console.log('stderr: ' + stderr);
+                        if (error !== null) {
+                            console.log('exec error: ' + error);
+                        }
+                    });
+
+                    callback(null, 'pop a notification');
                 }
 
             ], function (err, results) {
