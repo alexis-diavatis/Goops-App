@@ -1,8 +1,11 @@
-@color-grey: #555555;
-@color-grey-dark: #202020;
+/*
+Add a css stylus preprocessor middleware
+
+@color-grey1: #555555;
+@color-grey-dark: #202020; */
 
 body {
-    background-color: @color-grey-dark;
+    background-color: #202020;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 14px;
     line-height: 1.42857;    
@@ -15,7 +18,7 @@ body {
 }
 
 footer {
-	background:@color-grey-dark;
+	background:#202020;
 	height:141px;
 	border-top:1px solid #555;
 	color:#ccc;
@@ -59,7 +62,7 @@ footer {
 }
 
 .tmpl-search {
-	background: @color-grey-dark;
+	background: #202020;
 	border:none;
 	border-bottom:#555 1px solid;
 }
@@ -110,7 +113,7 @@ a
 
 #sidebar {
 	height:650px;
-	background:@color-grey;
+	background:#555555;
 	padding-right:0px;
 
 }
@@ -142,13 +145,13 @@ a
 }
 
 .modal-header {
-    background:@color-grey-dark;
+    background:#202020;
 }
 .modal-body {
-    background: @color-grey;
+    background: #555555;
 }
 .modal-footer {
-    background: @color-grey-dark;
+    background: #202020;
 }
 
 .modal-backdrop, .modal-backdrop.fade.in {

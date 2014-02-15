@@ -15,7 +15,7 @@
     <link href="./vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="./vendors/bootstrap/css/offcanvas.css" rel="stylesheet">
     <link href="./assets/stylesheets/extra.css" rel="stylesheet">
-    <link href="./assets/stylesheets/styles.less" rel="stylesheet/less">
+    <link href="./assets/stylesheets/styles.css" rel="stylesheet">
 
     <script>
         var fs = require('fs');
@@ -24,8 +24,7 @@
           var async = require('async');
           var win = gui.Window.get();
           var path = require('path');
-          var fse = require('fs-extra');
-          var less = require('less');
+          var fse = require('fs-extra');        
           //var io = require ('socket.io');
           var clientio = require('socket.io-client');
           var socket = clientio.connect('http://worldofgnome.org' , { port: '3001' }); 
@@ -103,9 +102,8 @@
 
     <script src="./vendors/jquery.js"></script>
     <script src="./vendors/angular.js"></script>
-    <script src="./vendors/angular-animate.js"></script>
-    <!-- Add a midleware -->
-    <script src="./vendors/less.js"></script>
+    <script src="./vendors/angular-animate.js"></script>   
+   
     <!--<script src="./vendors/socket.io.min.js"></script>-->
     <script src="./vendors/bootstrap/js/bootstrap.min.js"></script>
     <script src="./vendors/bootstrap/js/offcanvas.js"></script>
