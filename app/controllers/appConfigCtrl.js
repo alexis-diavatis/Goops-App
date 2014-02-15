@@ -59,94 +59,88 @@ angular.module('goopsApp')
 
                 function (callback) {
 
-                    var exec = require('child_process').exec,
-                        child;
+                        var exec = require('child_process').exec,
+                            child;
 
-                    /* Create directories if not exist, no need to check with stat */
+                        /* Create directories if not exist, no need to check with stat */
 
-                    fse.mkdirsSync(shellThemesDest);
-                    fse.mkdirsSync(gtkThemesDest);
-                    fse.mkdirsSync(iconThemesDest);
+                        fse.mkdirsSync(shellThemesDest);
+                        fse.mkdirsSync(gtkThemesDest);
+                        fse.mkdirsSync(iconThemesDest);
 
-                    callback(null, 'create paths');
+                        callback(null, 'create paths');
                 },
 
                 function (callback) {
-                    /* COPY SHELL THEMES IN APPR FOLDERS ~/.themes */
+                        /* COPY SHELL THEMES IN APPR FOLDERS ~/.themes */
+                        var shellThemesSrc = goopsReadDB.getDataPath() + 'shell/';
 
-                    var shellThemesSrc = goopsReadDB.getDataPath() + 'shell/*';
-                    cmd = "cp -r " + shellThemesSrc + " " + shellThemesDest;
-
-                    child = exec(cmd, function (error, stdout, stderr) {
-                        console.log('stderr: ' + stderr);
-                        if (error !== null) {
-                            console.log('exec error: ' + error);
-                        }
-                    });
-
-                    callback(null, 'copy shell themes');
+                        fse.copy(shellThemesSrc, shellThemesDest, function (err) {
+                            if (err) {
+                                throw err;
+                            }
+                            console.log("Copied: " + shellThemesSrc + " to " + shellThemesDest);
+                        });
+                        callback(null, 'copy shell themes');
                 },
 
                 function (callback) {
-                    /* COPY GTK THEMES IN APPR FOLDERS ~/.themes & ~/.local/share/themes/*/
+                        /* COPY GTK THEMES IN APPR FOLDERS ~/.themes & ~/.local/share/themes/ */
 
-                    var gtkThemesSrc = goopsReadDB.getDataPath() + 'gtk/*';
-                    cmd = "cp -r " + gtkThemesSrc + " " + gtkThemesDest;
-                    child = exec(cmd, function (error, stdout, stderr) {
-                        console.log('stderr: ' + stderr);
-                        if (error !== null) {
-                            console.log('exec error: ' + error);
-                        }
-                    });
+                        var shellThemesSrc = goopsReadDB.getDataPath() + 'shell/';
+                        var gtkThemesSrc = goopsReadDB.getDataPath() + 'gtk/';
 
-                    //Additionally copy inside themes for gtk2 support
+                        fse.copy(gtkThemesSrc, gtkThemesDest, function (err) {
+                            if (err) {
+                                throw err;
+                            }
+                            console.log("Copied: " + shellThemesSrc + " to " + shellThemesDest);
+                        });
 
+                        //Additionally copy inside themes for gtk2 support
 
-                    cmd = "cp -r " + gtkThemesSrc + " " + shellThemesDest;
-                    child = exec(cmd, function (error, stdout, stderr) {
-                        console.log('stderr: ' + stderr);
-                        if (error !== null) {
-                            console.log('exec error: ' + error);
-                        }
-                    });
-
-                    callback(null, 'copy gtk themes');
+                        fse.copy(gtkThemesSrc, shellThemesDest, function (err) {
+                            if (err) {
+                                throw err;
+                            }
+                            console.log("Copied: " + gtkThemesSrc + " to " + shellThemesDest);
+                        });
+                        callback(null, 'copy gtk themes');
                 },
 
                 function (callback) {
-                    /* COPY Icons THEMES IN APPR FOLDERS  ~/.local/share/icons/ */
 
-                    var iconsThemesSrc = goopsReadDB.getDataPath() + 'icons/*';
+                        /* COPY Icons THEMES IN APPR FOLDERS  ~/.local/share/icons/ */
 
-                    cmd = "cp -r " + iconsThemesSrc + " " + iconsThemesDest;
-                    child = exec(cmd, function (error, stdout, stderr) {
-                        console.log('stderr: ' + stderr);
-                        if (error !== null) {
-                            console.log('exec error: ' + error);
-                        }
+                        var iconsThemesSrc = goopsReadDB.getDataPath() + 'icons/';
 
-                    });
+                        fse.copy(iconsThemesSrc, iconsThemesDest, function (err) {
+                            if (err) {
+                                throw err;
+                            }
+                            console.log("Copied: " + iconsThemesSrc + " to " + iconsThemesDest);
+                        });
 
-                    callback(null, 'copy icons themes');
+                        callback(null, 'copy icons themes');
                 },
+
                 function (callback) {
-                    cmd = "notify-send 'Goops finished syncing succesfully!'";
-                    child = exec(cmd, function (error, stdout, stderr) {
-                        console.log('stderr: ' + stderr);
-                        if (error !== null) {
-                            console.log('exec error: ' + error);
-                        }
-                    });
+                        cmd = "notify-send 'Goops finished syncing succesfully!'";
+                        child = exec(cmd, function (error, stdout, stderr) {
+                            console.log('stderr: ' + stderr);
+                            if (error !== null) {
+                                console.err('exec error: ' + error);
+                            }
+                        });
 
-                    callback(null, 'pop a notification');
-                }
-
-            ], function (err, results) {
-                if (err) return console.error(err);
-                console.log(results);
-
-            });
+                        callback(null, 'pop a notification');
+                }],
+                function (err, results) {
+                    /*if (err) return console.error(err);
+                        console.log(results);*/
+                
+                });
         }
 
 
-   }]);
+ }]);
