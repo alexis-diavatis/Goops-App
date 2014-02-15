@@ -3,9 +3,9 @@ angular.module('goopsApp')
 .controller('GtkThemesListCtrl', ['$scope', 'configService',
     function ($scope, configService) {
 
-        gtkThemesPath = ilg_json.getDataPath() + 'db/gtk.json';
+        gtkThemesPath = goopsReadDB.getDataPath() + 'db/gtk.json';
 
-        $scope.gtkThemes = ilg_json.getThemesDB(gtkThemesPath, 'gtk');
+        $scope.gtkThemes = goopsReadDB.getThemesDB(gtkThemesPath, 'gtk');
 
         $scope.gtkThumb = configService.appPath() + "data/db/images/gtk/";
         $scope.openTweakTool = function () {

@@ -3,9 +3,9 @@ angular.module('goopsApp')
 .controller('IconsCtrl', ['$scope', 'configService',
     function ($scope, configService) {
 
-        iconThemesPath = ilg_json.getDataPath() + 'db/icons.json';
+        iconThemesPath = goopsReadDB.getDataPath() + 'db/icons.json';
 
-        $scope.iconThemes = ilg_json.getThemesDB(iconThemesPath, 'icons');
+        $scope.iconThemes = goopsReadDB.getThemesDB(iconThemesPath, 'icons');
 
         $scope.iconThumb = configService.appPath() + "data/db/images/icons/";
         

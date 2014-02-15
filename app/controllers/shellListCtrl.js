@@ -3,9 +3,9 @@ angular.module('goopsApp')
 .controller('ShellThemesListCtrl', ['$scope', 'configService',
     function ($scope, configService) {
 
-        shellThemesPath = ilg_json.getDataPath() + 'db/shell.json';
+        shellThemesPath = goopsReadDB.getDataPath() + 'db/shell.json';
 
-        $scope.shellThemes = ilg_json.getThemesDB(shellThemesPath, 'shell');
+        $scope.shellThemes = goopsReadDB.getThemesDB(shellThemesPath, 'shell');
         
         $scope.openTweakTool = function() {
             configService.openTweakTool(); 
