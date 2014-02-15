@@ -3,7 +3,7 @@ var ilgApp = angular.module('ilgApp', ["ngAnimate"])
 .factory('configService', function () {
     return {
         appPath: function () {
-            return process.env.ILG_CLIENT_PATH;
+            return process.env.GOOPS_PATH;
         },
         openTweakTool: function () {
             var exec = require('child_process').exec,
