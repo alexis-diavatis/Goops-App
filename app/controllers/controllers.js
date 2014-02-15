@@ -29,43 +29,7 @@ var ilgApp = angular.module('ilgApp', ["ngAnimate"])
         },
 
         launchDefaultBrowser: function (link) {
-            var exec = require('child_process').exec,
-                child,
-                myBrowser;
-
-            var getBrowser = function (stdout) {
-                myBrowser = stdout.slice(0, stdout.length - 1); //Trim /n
-
-                cmd = "gtk-launch " + myBrowser + " " + link;                
-                child = exec(cmd, function (error, stdout, stderr) {
-
-                    //console.log('stdout: ' + stdout);
-                    //console.log('stderr: ' + stderr);                
-
-                    if (error !== null) {
-                        console.log('exec error: ' + error);
-                    }
-
-
-                });
-
-            }
-
-            cmd = "xdg-mime query default x-scheme-handler/http";
-            child = exec(cmd, function (error, stdout, stderr) {
-
-                //console.log('stdout: ' + stdout);
-                //console.log('stderr: ' + stderr);                
-
-                if (error !== null) {
-                    console.log('exec error: ' + error);
-                } else {
-                    getBrowser(stdout);
-                }
-
-            });
-
-
+            gui.Shell.openExternal(link);
         }
     }
 
