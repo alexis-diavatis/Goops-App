@@ -1,6 +1,6 @@
 angular.module('goopsApp')
 
-.controller('ShellThemesListCtrl', ['$scope', 'configService',
+.controller('ShellThemesCtrl', ['$scope', 'configService',
     function ($scope, configService) {
 
         shellThemesPath = goopsReadDB.getDataPath() + 'db/shell.json';
