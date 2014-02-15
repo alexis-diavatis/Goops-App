@@ -32,6 +32,15 @@ footer {
 	padding:0 0 0 20px;
 }
 
+.list-group-item {
+    background:none;        
+}
+hr {
+    border:none;
+    height:1px; 
+    background:#555;
+}
+
 .navbar {
 	background:#fff;
 }
