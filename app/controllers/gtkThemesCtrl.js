@@ -1,6 +1,6 @@
 angular.module('goopsApp')
 
-.controller('GtkThemesListCtrl', ['$scope', 'configService',
+.controller('GtkThemesCtrl', ['$scope', 'configService',
     function ($scope, configService) {
 
         gtkThemesPath = goopsReadDB.getDataPath() + 'db/gtk.json';
