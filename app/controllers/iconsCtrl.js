@@ -1,4 +1,4 @@
-angular.module('ilgApp')
+angular.module('goopsApp')
 
 .controller('IconsCtrl', ['$scope', 'configService',
     function ($scope, configService) {

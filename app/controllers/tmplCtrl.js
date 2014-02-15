@@ -1,4 +1,4 @@
-angular.module('ilgApp')
+angular.module('goopsApp')
 
     .controller('tmplCtrl',
         ['$scope', function($scope) {

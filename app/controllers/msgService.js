@@ -1,4 +1,4 @@
-angular.module('ilgApp')
+angular.module('goopsApp')
 
 .factory('MsgService', ['$rootScope',
     function ($rootScope) {
