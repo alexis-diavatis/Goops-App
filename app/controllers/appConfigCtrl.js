@@ -3,9 +3,9 @@ angular.module('goopsApp')
 .controller('AppConfigCtrl', ['$scope', 'configService', 'MsgService',
     function ($scope, configService, MsgService) {
 
-        var shellThemesDest = ilg_json.getHomePath() + '/.themes',
-            gtkThemesDest = ilg_json.getHomePath() + '/.local/share/themes',
-            iconThemesDest = ilg_json.getHomePath() + '/.local/share/icons';
+        var shellThemesDest = goopsReadDB.getHomePath() + '/.themes',
+            gtkThemesDest = goopsReadDB.getHomePath() + '/.local/share/themes',
+            iconThemesDest = goopsReadDB.getHomePath() + '/.local/share/icons';
         var exec = require('child_process').exec,
             child;
 
@@ -49,11 +49,11 @@ angular.module('goopsApp')
 
         /** Sync and create folders **/
         //** This need to be hardly optimized! **//
-        $scope.ilgAppSyncData = function () {
+        $scope.goopsAppSyncData = function () {
 
-            var shellThemesDest = ilg_json.getHomePath() + '/.themes',
-                gtkThemesDest = ilg_json.getHomePath() + '/.local/share/themes',
-                iconsThemesDest = ilg_json.getHomePath() + '/.local/share/icons';
+            var shellThemesDest = goopsReadDB.getHomePath() + '/.themes',
+                gtkThemesDest = goopsReadDB.getHomePath() + '/.local/share/themes',
+                iconsThemesDest = goopsReadDB.getHomePath() + '/.local/share/icons';
 
             async.series([
 
@@ -74,7 +74,7 @@ angular.module('goopsApp')
                 function (callback) {
                     /* COPY SHELL THEMES IN APPR FOLDERS ~/.themes */
 
-                    var shellThemesSrc = ilg_json.getDataPath() + 'shell/*';
+                    var shellThemesSrc = goopsReadDB.getDataPath() + 'shell/*';
                     cmd = "cp -r " + shellThemesSrc + " " + shellThemesDest;
 
                     child = exec(cmd, function (error, stdout, stderr) {
@@ -90,7 +90,7 @@ angular.module('goopsApp')
                 function (callback) {
                     /* COPY GTK THEMES IN APPR FOLDERS ~/.themes & ~/.local/share/themes/*/
 
-                    var gtkThemesSrc = ilg_json.getDataPath() + 'gtk/*';
+                    var gtkThemesSrc = goopsReadDB.getDataPath() + 'gtk/*';
                     cmd = "cp -r " + gtkThemesSrc + " " + gtkThemesDest;
                     child = exec(cmd, function (error, stdout, stderr) {
                         console.log('stderr: ' + stderr);
@@ -116,7 +116,7 @@ angular.module('goopsApp')
                 function (callback) {
                     /* COPY Icons THEMES IN APPR FOLDERS  ~/.local/share/icons/ */
 
-                    var iconsThemesSrc = ilg_json.getDataPath() + 'icons/*';
+                    var iconsThemesSrc = goopsReadDB.getDataPath() + 'icons/*';
 
                     cmd = "cp -r " + iconsThemesSrc + " " + iconsThemesDest;
                     child = exec(cmd, function (error, stdout, stderr) {

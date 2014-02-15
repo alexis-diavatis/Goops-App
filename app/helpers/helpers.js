@@ -1,7 +1,7 @@
 
 const APP_PATH = process.env.GOOPS_PATH;
 
-module.exports =  function Ilg_json() {
+module.exports =  function goopsReadDB() {
 
 
     var fs = require('fs');
