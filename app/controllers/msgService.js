@@ -3,9 +3,8 @@ angular.module('goopsApp')
 .factory('MsgService', ['$rootScope',
     function ($rootScope) {
         return {
-            testValue : "test",
-            
-            getServerMessages: function (cb) {
+
+            getServerUpdates: function (cb) {
                 async.series([
 
             function (callback) {
@@ -20,6 +19,11 @@ angular.module('goopsApp')
                     if (err) return console.error(err);
                     cb(null, result);
                     //console.log(result);
+                });
+            },
+            addClient: function (user) {
+                socket.on('connect', function (data) {
+                    socket.emit('adduser', user);
                 });
             }
         }

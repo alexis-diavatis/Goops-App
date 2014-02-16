@@ -6,7 +6,9 @@ angular.module('goopsApp')
         
         $scope.appPackage = configService.getAppPackage();
         
-        MsgService.getServerMessages(function (data, result) {
+        MsgService.addClient('username');
+        
+        MsgService.getServerUpdates(function (data, result) {
             $scope.$apply(function () {
                 $scope.version = result;
             });
