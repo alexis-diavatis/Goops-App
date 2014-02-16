@@ -3,7 +3,11 @@ var ilgApp = angular.module('goopsApp', ["ngAnimate"])
 .factory('configService', function () {
     return {
         appPath: function () {
-            return process.env.GOOPS_PATH;
+            var path = process.env.GOOPS_PATH;
+            if (path)
+                return path;
+            else
+                return "Oops you haven't set GOOPS_PATH :(";
         },
         openTweakTool: function () {
             var exec = require('child_process').exec,
