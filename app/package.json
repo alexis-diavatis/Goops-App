@@ -5,8 +5,7 @@
   "version": "0.0.1",
   "chromium-args" : "--ignore-certificate-errors",    
   "window": {
-    "title": "Goops",
-    "icon": "/home/alex/Girlfriend/Girlfriend-App/logo.png",     
+    "title": "Goops",      
     "toolbar": false,
     "frame": true,
     "width": 1200,
