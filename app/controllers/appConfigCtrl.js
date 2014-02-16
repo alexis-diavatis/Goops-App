@@ -35,17 +35,16 @@ angular.module('goopsApp')
 
 
             cmd = "gtk-launch nautilus " + path;
+            //gui.Shell.showItemInFolder(path);
 
-            child = exec(cmd, function (error, stdout, stderr) {
-                console.log('stdout: ' + stdout);
-                console.log('stderr: ' + stderr);
+            child = exec(cmd, function (error, stdout, stderr) {               
                 if (error !== null) {
                     console.log('exec error: ' + error);
                 }
             });
 
         }
-
+        
 
         /** Sync and create folders **/
         //** This need to be hardly optimized! **//
