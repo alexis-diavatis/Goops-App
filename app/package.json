@@ -12,7 +12,7 @@
     "width": 1200,
     "height": 830,
     "resizable": false,
-    "show":true   
+    "show":false   
   },
   "dependencies": {
    "fs-extra": "*",
