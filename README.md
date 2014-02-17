@@ -57,7 +57,7 @@ The output should be
 /home/your-username/Goops/
 ```
 
-<h3>Run</h3>
+<h3>3. Run</h3>
 You can now run Goops. Enter into Goops directory
 ```bash
 $ cd ~/Goops
