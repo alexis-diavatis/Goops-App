@@ -76,7 +76,7 @@ angular.module('goopsApp')
 
                         fse.copy(shellThemesSrc, shellThemesDest, function (err) {
                             if (err) {
-                                throw err;
+                                console.err(err);
                             }
                             console.log("Copied: " + shellThemesSrc + " to " + shellThemesDest);
                         });
@@ -91,7 +91,7 @@ angular.module('goopsApp')
 
                         fse.copy(gtkThemesSrc, gtkThemesDest, function (err) {
                             if (err) {
-                                throw err;
+                                console.err(err);
                             }
                             console.log("Copied: " + shellThemesSrc + " to " + shellThemesDest);
                         });
@@ -100,7 +100,7 @@ angular.module('goopsApp')
 
                         fse.copy(gtkThemesSrc, shellThemesDest, function (err) {
                             if (err) {
-                                throw err;
+                                console.err(err);
                             }
                             console.log("Copied: " + gtkThemesSrc + " to " + shellThemesDest);
                         });
@@ -115,7 +115,7 @@ angular.module('goopsApp')
 
                         fse.copy(iconsThemesSrc, iconsThemesDest, function (err) {
                             if (err) {
-                                throw err;
+                                console.err(err);
                             }
                             console.log("Copied: " + iconsThemesSrc + " to " + iconsThemesDest);
                         });
@@ -126,7 +126,7 @@ angular.module('goopsApp')
                 function (callback) {
                         cmd = "notify-send 'Goops finished syncing succesfully!'";
                         child = exec(cmd, function (error, stdout, stderr) {
-                            console.log('stderr: ' + stderr);
+                            
                             if (error !== null) {
                                 console.err('exec error: ' + error);
                             }
