@@ -7,6 +7,8 @@ Goops is an application for using the theme service for GNOME3. Theme service is
 
 Goops is depend-free for now, but you need user-gnome-shell-extension if you want to apply Shell Themes. It is also strongly recomented to install GNOME Tweak Tool, that adds user-gnome-shell-extension as a dependency
 
+Ooh, you also need <strong>GNOME 3.10</strong> only!
+
 <h2>Installation</h2>
 
 In next versions installation and updates will be automated
@@ -22,7 +24,7 @@ Adjust accordingly
 
 <h3>1. Download</h3>
 
-Download the client and data from http://worldofgnome.org:3000
+Download the client and data from http://worldofgnome.org:3000. Currently there are only 64bit binaries
 
 Unzip the application and Unzip the data
 
@@ -35,7 +37,7 @@ Inside the root directory `~/Goops` add `data` folder
 
 It is important before you start Goops to set `$GOOPS_PATH` env variable correctly. It should always point to Goops installation directory `~/Goops`
 
-1. Open `.bashrc` with gedit
+Open `.bashrc` with gedit
 ```bash
 $ gedit ~/.bashrc
 ```
