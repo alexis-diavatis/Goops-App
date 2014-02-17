@@ -9,9 +9,12 @@ Goops is an application for using the theme service for GNOME3. Theme service is
 
 
 In next versions installation and updates will be automated. Instructions are made for installing Goops under 
-````~/Goops````
+```bash
+~/Goops
 
-<code>~/Goops</code>
+```
+
+
 
 <h3>1. Download</h3>
 
