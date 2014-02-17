@@ -93,7 +93,7 @@ Notice that your `/lib64` path can be different depending your distro
 
 Make a symbolic link
 ```bash
-$ ln -s libudev.so.1 libudev.so.0
+$ sudo ln -s libudev.so.1 libudev.so.0
 ```
 
 More about that issue: 
