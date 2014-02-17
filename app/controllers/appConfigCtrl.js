@@ -67,7 +67,7 @@ angular.module('goopsApp')
         var copyShellThemes = function () {
             var shellThemesSrc = goopsReadDB.getDataPath() + 'shell/';
 
-            fse.copy(shellThemesSrc, shellThemesDest, function (err) {
+            fse.copySync(shellThemesSrc, shellThemesDest, function (err) {
                 if (err) {
                     console.log(err);
                 }
@@ -79,7 +79,7 @@ angular.module('goopsApp')
             var shellThemesSrc = goopsReadDB.getDataPath() + 'shell/';
             var gtkThemesSrc = goopsReadDB.getDataPath() + 'gtk/';
 
-            fse.copy(gtkThemesSrc, gtkThemesDest, function (err) {
+            fse.copySync(gtkThemesSrc, gtkThemesDest, function (err) {
                 if (err) {
                     console.log(err);
                 }
@@ -88,7 +88,7 @@ angular.module('goopsApp')
 
             //Additionally copy inside themes for gtk2 support
 
-            fse.copy(gtkThemesSrc, shellThemesDest, function (err) {
+            fse.copySync(gtkThemesSrc, shellThemesDest, function (err) {
                 if (err) {
                     console.log(err);
                 }
@@ -99,7 +99,7 @@ angular.module('goopsApp')
         var copyIconThemes = function () {
             var iconsThemesSrc = goopsReadDB.getDataPath() + 'icons/';
 
-            fse.copy(iconsThemesSrc, iconsThemesDest, function (err) {
+            fse.copySync(iconsThemesSrc, iconsThemesDest, function (err) {
                 if (err) {
                     console.log(err);
                 }
@@ -119,7 +119,8 @@ angular.module('goopsApp')
                 }
             });
         }
-
+        
+        // Make this Async!!
         var AppSyncData = function () {
 
             async.series([
@@ -156,7 +157,7 @@ angular.module('goopsApp')
 
                 function (callback) {
                     setTimeout(function(){
-                        sendShellNotification("'Goops copy files succesfully'");
+                        sendShellNotification("'Goops synced data succesfully!'");
                         callback(null, 'Done!');
                     }, 10);
                 }
@@ -164,7 +165,7 @@ angular.module('goopsApp')
                 function (err, results) {
                     if (err)
                         return console.log(err)
-                    console.log("END SUCCESFULLY!");
+                    console.log("Synced data succesfully");
 
                 }); //End of async series
         }
