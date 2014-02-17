@@ -135,8 +135,9 @@ angular.module('goopsApp')
                         callback(null, 'pop a notification');
                 }],
                 function (err, results) {
-                    /*if (err) return console.error(err);
-                        console.log(results);*/
+                    if (err) 
+                        return console.err(err)
+                    console.log(results);
                 
                 });
         }
