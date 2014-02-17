@@ -71,15 +71,15 @@ Before anything else, go to `Update` Panel and press `Sync Themes`
 
 This is under development and there are many bugs, but nothing bad won't happen in your box. Goops will never ask you root
 
-<h4>1. Goops doesn't start in Antergos</h4>
+<h5>1. Goops doesn't start in Antergos</h5>
 
 Goops crashes under Antergos and probably under Arch Linux and any Arch derivative
 
-<h4>2. Goops window is not resizable</h4>
+<h5>2. Goops window is not resizable</h5>
 
 Goops window dimensions are fixed 1200x850, and console is hidden in 1366x768 resolutions. That will be fixed soon.
 
-<h4>3. libudev.so.0 is missing</h4>
+<h5>3. libudev.so.0 is missing</h5>
 
 When you will start Goops for first time you will possibly get a complaing about `libudev.so.0`
 
@@ -93,13 +93,13 @@ Notice that your `/lib64` path can be different depending your distro
 
 Make a symbolic link
 ```bash
-$ ln -s libudev.so.1 libudev.so.1
+$ ln -s libudev.so.1 libudev.so.0
 ```
 
 More about that issue: 
 https://github.com/rogerwang/node-webkit/wiki/The-solution-of-lacking-libudev.so.0
 
-<h4>4. Themes are dublicated in GNOME Tweak Tool</h4>
+<h5>4. Themes are dublicated in GNOME Tweak Tool</h5>
 
 This is an upstream bug of Gtk2 theming for user-specific installations. The only way to solve this is Goops to use root access and install themes system-wide, under `/usr/..`, something that we don't really want
 
