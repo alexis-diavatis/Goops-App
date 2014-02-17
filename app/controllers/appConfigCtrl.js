@@ -37,109 +37,136 @@ angular.module('goopsApp')
             cmd = "gtk-launch nautilus " + path;
             //gui.Shell.showItemInFolder(path);
 
-            child = exec(cmd, function (error, stdout, stderr) {               
+            child = exec(cmd, function (error, stdout, stderr) {
                 if (error !== null) {
                     console.log('exec error: ' + error);
                 }
             });
 
         }
-        
+
 
         /** Sync and create folders **/
         //** This need to be hardly optimized! **//
         $scope.goopsAppSyncData = function () {
+            AppSyncData();
+        }
 
-            var shellThemesDest = goopsReadDB.getHomePath() + '/.themes',
-                gtkThemesDest = goopsReadDB.getHomePath() + '/.local/share/themes',
-                iconsThemesDest = goopsReadDB.getHomePath() + '/.local/share/icons';
+        var shellThemesDest = goopsReadDB.getHomePath() + '/.themes',
+            gtkThemesDest = goopsReadDB.getHomePath() + '/.local/share/themes',
+            iconsThemesDest = goopsReadDB.getHomePath() + '/.local/share/icons';
+
+        var createDirectories = function () {
+
+            fse.mkdirsSync(shellThemesDest);
+            fse.mkdirsSync(gtkThemesDest);
+            fse.mkdirsSync(iconThemesDest);
+
+        }
+
+        var copyShellThemes = function () {
+            var shellThemesSrc = goopsReadDB.getDataPath() + 'shell/';
+
+            fse.copy(shellThemesSrc, shellThemesDest, function (err) {
+                if (err) {
+                    console.log(err);
+                }
+                console.log("Copied: " + shellThemesSrc + " to " + shellThemesDest);
+            });
+        }
+
+        var copyGtkThemes = function (callback) {
+            var shellThemesSrc = goopsReadDB.getDataPath() + 'shell/';
+            var gtkThemesSrc = goopsReadDB.getDataPath() + 'gtk/';
+
+            fse.copy(gtkThemesSrc, gtkThemesDest, function (err) {
+                if (err) {
+                    console.log(err);
+                }
+                console.log("Copied: " + shellThemesSrc + " to " + shellThemesDest);
+            });
+
+            //Additionally copy inside themes for gtk2 support
+
+            fse.copy(gtkThemesSrc, shellThemesDest, function (err) {
+                if (err) {
+                    console.log(err);
+                }
+                console.log("Copied: " + gtkThemesSrc + " to " + shellThemesDest);
+            });
+        }
+
+        var copyIconThemes = function () {
+            var iconsThemesSrc = goopsReadDB.getDataPath() + 'icons/';
+
+            fse.copy(iconsThemesSrc, iconsThemesDest, function (err) {
+                if (err) {
+                    console.log(err);
+                }
+                console.log("Copied: " + iconsThemesSrc + " to " + iconsThemesDest);
+            });
+
+        }
+
+        var sendShellNotification = function (msg) {
+            var exec = require('child_process').exec,
+                child;
+            cmd = "notify-send " + msg;
+            child = exec(cmd, function (error, stdout, stderr) {
+
+                if (error !== null) {
+                    console.log('exec error: ' + error);
+                }
+            });
+        }
+
+        var AppSyncData = function () {
 
             async.series([
 
+                // Create directories if not exist, no need to check with stat 
+
                 function (callback) {
-
-                        var exec = require('child_process').exec,
-                            child;
-
-                        /* Create directories if not exist, no need to check with stat */
-
-                        fse.mkdirsSync(shellThemesDest);
-                        fse.mkdirsSync(gtkThemesDest);
-                        fse.mkdirsSync(iconThemesDest);
-
-                        callback(null, 'create paths');
+                     setTimeout(function(){
+                        createDirectories();
+                        callback(null, 'Create Directories');
+                      }, 1);     
                 },
 
                 function (callback) {
-                        /* COPY SHELL THEMES IN APPR FOLDERS ~/.themes */
-                        var shellThemesSrc = goopsReadDB.getDataPath() + 'shell/';
-
-                        fse.copy(shellThemesSrc, shellThemesDest, function (err) {
-                            if (err) {
-                                console.err(err);
-                            }
-                            console.log("Copied: " + shellThemesSrc + " to " + shellThemesDest);
-                        });
-                        callback(null, 'copy shell themes');
+                    setTimeout(function(){
+                        copyShellThemes();
+                        callback(null, 'Copy Shell Themes');
+                     }, 1);   
                 },
 
                 function (callback) {
-                        /* COPY GTK THEMES IN APPR FOLDERS ~/.themes & ~/.local/share/themes/ */
-
-                        var shellThemesSrc = goopsReadDB.getDataPath() + 'shell/';
-                        var gtkThemesSrc = goopsReadDB.getDataPath() + 'gtk/';
-
-                        fse.copy(gtkThemesSrc, gtkThemesDest, function (err) {
-                            if (err) {
-                                console.err(err);
-                            }
-                            console.log("Copied: " + shellThemesSrc + " to " + shellThemesDest);
-                        });
-
-                        //Additionally copy inside themes for gtk2 support
-
-                        fse.copy(gtkThemesSrc, shellThemesDest, function (err) {
-                            if (err) {
-                                console.err(err);
-                            }
-                            console.log("Copied: " + gtkThemesSrc + " to " + shellThemesDest);
-                        });
-                        callback(null, 'copy gtk themes');
+                      setTimeout(function(){ 
+                        copyGtkThemes();
+                        callback(null, 'Copy GTK Themes');
+                     }, 1);
                 },
 
                 function (callback) {
-
-                        /* COPY Icons THEMES IN APPR FOLDERS  ~/.local/share/icons/ */
-
-                        var iconsThemesSrc = goopsReadDB.getDataPath() + 'icons/';
-
-                        fse.copy(iconsThemesSrc, iconsThemesDest, function (err) {
-                            if (err) {
-                                console.err(err);
-                            }
-                            console.log("Copied: " + iconsThemesSrc + " to " + iconsThemesDest);
-                        });
-
-                        callback(null, 'copy icons themes');
+                    setTimeout(function(){ 
+                        copyIconThemes();
+                        callback(null, 'Copy Icon Themes');
+                    }, 1);
                 },
 
                 function (callback) {
-                        cmd = "notify-send 'Goops finished syncing succesfully!'";
-                        child = exec(cmd, function (error, stdout, stderr) {
-                            
-                            if (error !== null) {
-                                console.err('exec error: ' + error);
-                            }
-                        });
-
-                        callback(null, 'pop a notification');
-                }],
+                    setTimeout(function(){
+                        sendShellNotification("'Goops copy files succesfully'");
+                        callback(null, 'Done!');
+                    }, 10);
+                }
+            ],
                 function (err, results) {
-                    if (err) 
-                        return console.err(err)
-                    console.log(results);
-                
-                });
+                    if (err)
+                        return console.log(err)
+                    console.log("END SUCCESFULLY!");
+
+                }); //End of async series
         }
 
 
