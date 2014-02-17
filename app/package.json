@@ -2,7 +2,7 @@
   "main": "index.html",
   "name": "goops",
   "description": "app for install themes",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "chromium-args" : "--ignore-certificate-errors",    
   "window": {
     "title": "Goops",      
