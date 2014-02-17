@@ -7,11 +7,15 @@ Goops is an application for using the theme service for GNOME3. Theme service is
 
 <h2>Installation</h2>
 
+In next versions installation and updates will be automated. 
 
-In next versions installation and updates will be automated. Instructions are made for installing Goops under 
+Instructions are made for installing Goops under
+
 ```bash
-~/Goops ie /home/your-username/Goops
+~/Goops
 ```
+`~/` means `$HOME` or else `/home/your-username/`.  
+
 Adjust accordingly.
 
 <h3>1. Download</h3>
@@ -39,5 +43,33 @@ In the end of the file add.
 export GOOPS_PATH=/home/your-username/Goops/
 ```
 Path must end with `/`!
+
+Open a new terminal and test your changes.
+```bash
+$ echo $GOOPS_PATH
+```
+The output should be
+```bash
+/home/your-username/Goops/
+```
+
+<h3>Run</h3>
+You can now run Goops. Enter into Goops directory.
+```bash
+$ cd ~/Goops
+```
+and run it.
+```bash
+$ ./goops
+```
+<h2>Known Issues</h2>
+
+This is under development and there are many bugs, but nothing bad won't happen in your box. Goops will never ask you root. 
+
+<h4>1. Goops doesn't start in Antergos</h4>
+
+Goops crashes under Antergos and probably under Arch Linux and any Arch derivative.
+
+
 
 
