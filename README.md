@@ -98,6 +98,10 @@ $ ln -s libudev.so.1 libudev.so.1
 More about that issue: 
 https://github.com/rogerwang/node-webkit/wiki/The-solution-of-lacking-libudev.so.0
 
+<h4>4. Themes are dublicated in GNOME Tweak Tool</h4>
+
+This is an upstream bug of Gtk2 theming for user-specific installations. The only way to solve this is Goops to use root access and install themes system-wide, under `/usr/..`, something that we don't really want
+
 <h2>More</h2>
 
 More to come soon!
