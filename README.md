@@ -3,14 +3,17 @@
 
 Goops is an application for using the theme service for GNOME3. Theme service is not yet deployed, therefore we use the concept of bundles for now.
 
-<hr />
-
-<h1>Installation</h1>
 
 
-In next versions installation and updates will be automated. 
+<h2>Installation</h2>
 
-<h3>Download</h3>
+
+In next versions installation and updates will be automated. Instructions are made for installing Goops under 
+````~/Goops````
+
+<code>~/Goops</code>
+
+<h3>1. Download</h3>
 
 Download the client and data from http://worldofgnome.org:3000
 
