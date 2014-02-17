@@ -5,7 +5,8 @@
   "version": "0.0.2",
   "chromium-args" : "--ignore-certificate-errors",    
   "window": {
-    "title": "Goops",      
+    "title": "Goops",
+    "icon": "logo.png",  
     "toolbar": false,
     "frame": true,
     "width": 1200,
