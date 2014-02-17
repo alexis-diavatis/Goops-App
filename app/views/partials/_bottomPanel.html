@@ -1,31 +1,39 @@
 <div ng-controller="consoleCtrl">
-<div class="col-lg-10" style="padding:0px;">
-    <footer>
-        <div id="console" style="font-size:12px;">
-            <table class="table table-conseded table-borderless">
-                <tr>
-                <td>
-                <strong>Latest |</strong> Client: <span class="label label-default">{{version.0.app}}</span>
-                Bundle: <span class="label label-default" tooltip="saa">{{version.0.bundle}}</span>    
-                </td>                    
-                </tr>
-                <tr>
-                <td>
-                <strong data-toggle="popover">Locked |</strong> <span class="label label-danger">Yes</span>
-               
-                </td>                    
-                </tr>
-            </table>
+    <div class="col-lg-10" style="padding:0px;">
+        <footer>
+            <div id="console" style="font-size:12px;">
+                <table class="table table-conseded table-borderless">
+                    <tr>
+                        <td>
+                            <strong>Latest |</strong>Client:
+                            <span class="label label-default">{{version.0.app}}</span>
+                            Bundle:
+                            <span class="label label-default" tooltip="saa">{{version.0.bundle}}</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong data-toggle="popover">Locked |</strong>
+                            <span class="label label-danger">Yes</span>
 
-        </div>
-    </footer>
-</div>
-<div id="footer-system" class="col-lg-2" style="padding:0px;">
-    <div class="list-group">
+                        </td>
+                    </tr>
+                </table>
 
-        <span style="font-size:12px;">
-            <span class="list-group-item"><span class="label label-primary">Goops {{appPackage.version}}</span></span>
-        </span>
+            </div>
+        </footer>
     </div>
-</div>
+    <div id="footer-system" class="col-lg-2" style="padding:0px;">
+        <div class="list-group">
+
+            <span style="font-size:12px;">
+                <span class="list-group-item">
+
+                    <span class="label label-primary">Goops {{appPackage.version}}</span>
+                    <span class="label label-default">nw {{nwVersion}}</span>
+
+                </span>
+            </span>
+        </div>
+    </div>
 </div>

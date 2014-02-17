@@ -121,15 +121,20 @@ angular.module('goopsApp')
         }
         
         // Make this Async!!
+        
+        //var t = process.hrtime(); t = process.hrtime(t);
+        // t = process.hrtime(); reset
+        
         var AppSyncData = function () {
-
-            async.series([
-
+           
+            
+            async.series([  
+                
                 // Create directories if not exist, no need to check with stat 
-
+                 
                 function (callback) {
                      setTimeout(function(){
-                        createDirectories();
+                        createDirectories();                        
                         callback(null, 'Create Directories');
                       }, 1);     
                 },
@@ -157,7 +162,7 @@ angular.module('goopsApp')
 
                 function (callback) {
                     setTimeout(function(){
-                        sendShellNotification("'Goops synced data succesfully!'");
+                        sendShellNotification("'Goops synced data succesfully!'");                        
                         callback(null, 'Done!');
                     }, 10);
                 }
@@ -165,8 +170,8 @@ angular.module('goopsApp')
                 function (err, results) {
                     if (err)
                         return console.log(err)
-                    console.log("Synced data succesfully");
-
+                    console.log("Synced data succesfully");                
+                     
                 }); //End of async series
         }
 

@@ -5,6 +5,7 @@ angular.module('goopsApp')
 
         
         $scope.appPackage = configService.getAppPackage();
+        $scope.nwVersion = process.versions['node-webkit'];
         
         MsgService.addClient('username');
         
