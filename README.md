@@ -66,6 +66,7 @@ and run it
 ```bash
 $ ./goops
 ```
+Before anything else, go to `Update` Panel and press `Sync Themes`
 <h2>Known Issues</h2>
 
 This is under development and there are many bugs, but nothing bad won't happen in your box. Goops will never ask you root
